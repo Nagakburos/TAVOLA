@@ -73,29 +73,32 @@ const MeetingTypeList = () => {
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
       <HomeCard
         img="/icons/add-meeting.svg"
-        title="New Meeting"
-        description="Start an instant meeting"
+        title="Nova Reunião"
+        description="Inicie uma reunião instantânea."        
+        className="bg-gradient-to-b from-purple-600 to-orange-500" 
+        //className='bg-gradient-to-b from-lime-400 to-cyan-600'
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
       <HomeCard
         img="/icons/join-meeting.svg"
-        title="Join Meeting"
-        description="via invitation link"
-        className="bg-blue-1"
+        title="Entrar em Reunião"
+        description="Entrar com link"
+        className="bg-gradient-to-b from-red-500 to-blue-600"
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
       <HomeCard
         img="/icons/schedule.svg"
-        title="Schedule Meeting"
-        description="Plan your meeting"
-        className="bg-purple-1"
+        title="Agendar"
+        description="Agende uma reunião."
+        className="bg-gradient-to-b from-green-400 to-blue-900"
         handleClick={() => setMeetingState('isScheduleMeeting')}
       />
       <HomeCard
         img="/icons/recordings.svg"
-        title="View Recordings"
-        description="Meeting Recordings"
-        className="bg-yellow-1"
+        title="Visualizar gravações."
+        description="Gravações de reuniões."
+        //className="bg-gradient-to-b from-orange-300 to-red-500" 
+        className='bg-gradient-to-b from-blue-400 to-purple-800'
         handleClick={() => router.push('/recordings')}
       />
 
@@ -167,9 +170,9 @@ const MeetingTypeList = () => {
       <MeetingModal
         isOpen={meetingState === 'isInstantMeeting'}
         onClose={() => setMeetingState(undefined)}
-        title="Start an Instant Meeting"
+        title="Iniciar Reunião"
         className="text-center"
-        buttonText="Start Meeting"
+        buttonText="Iniciar"
         handleClick={createMeeting}
       />
     </section>
