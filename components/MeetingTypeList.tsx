@@ -98,7 +98,6 @@ const MeetingTypeList = () => {
         img="/icons/recordings.svg"
         title="Visualizar gravações."
         description="Gravações de reuniões."
-        //className="bg-gradient-to-b from-orange-300 to-red-500" 
         className='bg-gradient-to-b from-blue-400 to-purple-800'
         handleClick={() => router.push('/recordings')}
       />
