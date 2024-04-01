@@ -76,7 +76,6 @@ const MeetingTypeList = () => {
         title="Nova Reunião"
         description="Inicie uma reunião instantânea."        
         className="bg-gradient-to-b from-purple-600 to-orange-500" 
-        //className='bg-gradient-to-b from-lime-400 to-cyan-600'
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
   
