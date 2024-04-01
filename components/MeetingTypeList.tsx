@@ -79,6 +79,7 @@ const MeetingTypeList = () => {
         //className='bg-gradient-to-b from-lime-400 to-cyan-600'
         handleClick={() => setMeetingState('isInstantMeeting')}
       />
+     {/* */}
       <HomeCard
         img="/icons/join-meeting.svg"
         title="Entrar em Reunião"
@@ -86,6 +87,7 @@ const MeetingTypeList = () => {
         className="bg-gradient-to-b from-red-500 to-blue-600"
         handleClick={() => setMeetingState('isJoiningMeeting')}
       />
+      
       <HomeCard
         img="/icons/schedule.svg"
         title="Agendar"
