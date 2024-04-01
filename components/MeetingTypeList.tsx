@@ -40,7 +40,7 @@ const MeetingTypeList = () => {
       }
       const id = crypto.randomUUID();
       const call = client.call('default', id);
-      if (!call) throw new Error('Failed to create meeting');
+      if (!call) throw new Error('Failed to create this Tavola');
       const startsAt =
         values.dateTime.toISOString() || new Date(Date.now()).toISOString();
       const description = values.description || 'Instant Meeting';
@@ -57,11 +57,11 @@ const MeetingTypeList = () => {
         router.push(`/meeting/${call.id}`);
       }
       toast({
-        title: 'Meeting Created',
+        title: 'Tavola Criada',
       });
     } catch (error) {
       console.error(error);
-      toast({ title: 'Failed to create Meeting' });
+      toast({ title: 'Failed to create this Tavola' });
     }
   };
 
@@ -106,12 +106,12 @@ const MeetingTypeList = () => {
         <MeetingModal
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
-          title="Create Meeting"
+          title="Criar reunião"
           handleClick={createMeeting}
         >
           <div className="flex flex-col gap-2.5">
             <label className="text-base font-normal leading-[22.4px] text-sky-2">
-              Add a description
+              Adicionar descrição
             </label>
             <Textarea
               className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
@@ -122,7 +122,7 @@ const MeetingTypeList = () => {
           </div>
           <div className="flex w-full flex-col gap-2.5">
             <label className="text-base font-normal leading-[22.4px] text-sky-2">
-              Select Date and Time
+              Selecione data e hora
             </label>
             <ReactDatePicker
               selected={values.dateTime}
@@ -140,28 +140,28 @@ const MeetingTypeList = () => {
         <MeetingModal
           isOpen={meetingState === 'isScheduleMeeting'}
           onClose={() => setMeetingState(undefined)}
-          title="Meeting Created"
+          title="Reunião criada"
           handleClick={() => {
             navigator.clipboard.writeText(meetingLink);
-            toast({ title: 'Link Copied' });
+            toast({ title: 'Link Copiado' });
           }}
           image={'/icons/checked.svg'}
           buttonIcon="/icons/copy.svg"
           className="text-center"
-          buttonText="Copy Meeting Link"
+          buttonText="Copiar link da reuniao"
         />
       )}
 
       <MeetingModal
         isOpen={meetingState === 'isJoiningMeeting'}
         onClose={() => setMeetingState(undefined)}
-        title="Type the link here"
+        title="Cole o Link aqui"
         className="text-center"
-        buttonText="Join Meeting"
+        buttonText="Entrar"
         handleClick={() => router.push(values.link)}
       >
         <Input
-          placeholder="Meeting link"
+          placeholder="Link da reunião"
           onChange={(e) => setValues({ ...values, link: e.target.value })}
           className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
         />

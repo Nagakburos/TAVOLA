@@ -57,11 +57,11 @@ const PersonalRoom = () => {
 
   return (
     <section className="flex size-full flex-col gap-10 text-white">
-      <h1 className="text-xl font-bold lg:text-3xl">Sala de Reunião Privada</h1>
+      <h1 className="text-xl font-bold lg:text-3xl">Tavola de Reunião Privada</h1>
       <div className="flex w-full flex-col gap-8 xl:max-w-[900px]">
-        <Table title="Topic" description={`${user?.username}'s Meeting Room`} />
-        <Table title="Meeting ID" description={meetingId!} />
-        <Table title="Invite Link" description={meetingLink} />
+        <Table title="Tema" description={`${user?.username}'s Tavola de Reunião`} />
+        <Table title="Tavola ID" description={meetingId!} />
+        <Table title="Link da Tavola" description={meetingLink} />
       </div>
       <div className="flex gap-5">
         <Button className="bg-gradient-to-b from-purple-600 to-orange-500" onClick={startRoom}>
@@ -72,7 +72,7 @@ const PersonalRoom = () => {
           onClick={() => {
             navigator.clipboard.writeText(meetingLink);
             toast({
-              title: "Link Copied",
+              title: "Link Copiado",
             });
           }}
         >

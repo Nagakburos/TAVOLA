@@ -10,6 +10,7 @@ import {
 import Alert from './Alert';
 import { Button } from './ui/button';
 
+
 const MeetingSetup = ({
   setIsSetupComplete,
 }: {
@@ -61,7 +62,7 @@ const MeetingSetup = ({
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-3 text-white">
-      <h1 className="text-center text-2xl font-bold">Setup</h1>
+      <h1 className="text-center text-2xl font-bold">Configurar</h1>
       <VideoPreview />
       <div className="flex h-16 items-center justify-center gap-3">
         <label className="flex items-center justify-center gap-2 font-medium">
@@ -70,8 +71,8 @@ const MeetingSetup = ({
             checked={isMicCamToggled}
             onChange={(e) => setIsMicCamToggled(e.target.checked)}
           />
-          Join with mic and camera off
-        </label>
+          Entrar com o microfone e a camera Desligados
+        </label>      
         <DeviceSettings />
       </div>
       <Button
@@ -82,7 +83,7 @@ const MeetingSetup = ({
           setIsSetupComplete(true);
         }}
       >
-        Join meeting
+        Acessar Távola
       </Button>
     </div>
   );

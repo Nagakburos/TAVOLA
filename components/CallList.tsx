@@ -30,11 +30,11 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
   const getNoCallsMessage = () => {
     switch (type) {
       case 'ended':
-        return 'No Previous Calls';
+        return 'Nenhuma chamada anterior';
       case 'upcoming':
-        return 'No Upcoming Calls';
+        return 'Nenhuma chamada agendada';
       case 'recordings':
-        return 'No Recordings';
+        return 'Você ainda não tem Gravações';
       default:
         return '';
     }
